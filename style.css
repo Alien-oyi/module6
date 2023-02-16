@@ -1,0 +1,29 @@
+h1 {
+    height: 70px;
+    background-image: linear-gradient(to right, rgb(231, 228, 53), rgb(27, 223, 86) , rgb(228, 23, 136));
+}
+.rotate {
+    justify-content: center;
+    align-items: center;
+    transition: ease-in-out 0.5s;
+    font-family: 'Gugi', cursive;
+}
+.rotate:hover {
+    box-shadow: 0 0 10px black;
+
+}
+.weather {
+  --c: #5cc47e;
+  line-height: 1.2em;
+  background:
+    conic-gradient(from -135deg at 100%  50%,var(--c) 90deg,#0000 0) 0    var(--p,0%),
+    conic-gradient(from -135deg at 1.2em 50%,#0000 90deg,var(--c) 0) 100% var(--p,0%);
+  background-size: var(--s,0%) 200%;
+  background-repeat: no-repeat;
+  transition: .4s ease-in, background-position 0s;
+}
+.weather:hover {
+  --p: 100%;
+  --s: calc(50% + .61em); /* it should be 0.6em(1.2em/2) but we use a litte bigger */
+  color: #fff;
+}
