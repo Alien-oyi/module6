@@ -27,3 +27,9 @@ h1 {
   --s: calc(50% + .61em); /* it should be 0.6em(1.2em/2) but we use a litte bigger */
   color: #fff;
 }
+.list-group-item {
+  cursor: pointer;
+}
+.list-group-item:hover {
+  background-color: rgb(46, 199, 153);
+}

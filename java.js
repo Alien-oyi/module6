@@ -66,17 +66,7 @@ $(document).ready(function () {
       var humid = $("<p>").addClass("card-text").text("Humidity: " + data.main.humidity + " %");
       var temp = $("<p>").addClass("card-text").text("Temperature: " + data.main.temp + " K");
       console.log(data)
-      var lon = data.coord.lon;
-      var lat = data.coord.lat;
 
-      $.ajax({
-        type: "GET",
-        url: "https://api.openweathermap.org/data/2.5/uvi?appid=ff328c709f930f3f5d34f579f4cc3b87&lat=" + lat + "&lon=" + lon,
-
-
-      }).then(function (response) {
-        console.log(response);
-      });
 
       // merge and add to page
       title.append(img);
@@ -99,7 +89,7 @@ $(document).ready(function () {
       //loop to create a new card for 5 days data
       for (var i = 0; i < data.list.length; i++) {
 
-        if (data.list[i].dt_txt.indexOf("15:00:00") !== -1) {
+        if (data.list[i].dt_txt.indexOf("12:00:00") !== -1) {
 
           var titleFive = $("<h2>").addClass("card-title text-bolder").text(new Date(data.list[i].dt_txt).toLocaleDateString());
           var imgFive = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png");
