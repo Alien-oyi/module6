@@ -94,18 +94,18 @@ $(document).ready(function () {
 
     }).then(function (data) {
       console.log(data);
-      $("#forecast").html("<h4 class=\"mt-3\">5-Day Forecast:</h4>").append("<div class=\"row\">");
+      $("#forecast").html("<h2 class=\"text-bolder\">5-Day Forecast:</h2>").append("<div class=\"row\">");
 
       //loop to create a new card for 5 days data
       for (var i = 0; i < data.list.length; i++) {
 
         if (data.list[i].dt_txt.indexOf("15:00:00") !== -1) {
 
-          var titleFive = $("<h3>").addClass("card-title").text(new Date(data.list[i].dt_txt).toLocaleDateString());
+          var titleFive = $("<h2>").addClass("card-title text-bolder").text(new Date(data.list[i].dt_txt).toLocaleDateString());
           var imgFive = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png");
           var colFive = $("<div>").addClass("col-md-2.5");
           var cardFive = $("<div>").addClass("card bg-primary text-white p-3");
-          var cardBodyFive = $("<div>").addClass("card-body p-2");
+          var cardBodyFive = $("<div>").addClass("card-body p-2 m-1");
           var humidFive = $("<p>").addClass("card-text").text("Humidity: " + data.list[i].main.humidity + "%");
           var tempFive = $("<p>").addClass("card-text").text("Temperature: " + data.list[i].main.temp + " °F");
           colFive.append(cardFive.append(cardBodyFive.append(titleFive, imgFive, tempFive, humidFive)));
