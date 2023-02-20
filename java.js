@@ -94,11 +94,12 @@ $(document).ready(function () {
           var titleFive = $("<h2>").addClass("card-title text-bolder").text(new Date(data.list[i].dt_txt).toLocaleDateString());
           var imgFive = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png");
           var colFive = $("<div>").addClass("col-md-2.5");
-          var cardFive = $("<div>").addClass("card bg-primary text-white p-3");
-          var cardBodyFive = $("<div>").addClass("card-body p-2 m-1");
+          var cardFive = $("<div>").addClass("card bg-primary text-white");
+          var cardBodyFive = $("<div>").addClass("card-body");
           var humidFive = $("<p>").addClass("card-text").text("Humidity: " + data.list[i].main.humidity + "%");
+          var windFive =$("<p>").addClass("card-text").text("Windspeed: "+ data.list[i].wind.speed + "MPH");
           var tempFive = $("<p>").addClass("card-text").text("Temperature: " + data.list[i].main.temp + " °F");
-          colFive.append(cardFive.append(cardBodyFive.append(titleFive, imgFive, tempFive, humidFive)));
+          colFive.append(cardFive.append(cardBodyFive.append(titleFive, imgFive, tempFive, windFive, humidFive)));
           $("#forecast .row").append(colFive);
         }
       }

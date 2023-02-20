@@ -33,3 +33,6 @@ h1 {
 .list-group-item:hover {
   background-color: rgb(46, 199, 153);
 }
+.card {
+  margin: 20px;
+}
